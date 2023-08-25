@@ -1,0 +1,163 @@
+<html>
+  <head>
+    <title>MUTANTS GYM</title>
+    <link rel="website icon" type="png" href="./images/icon.png" />
+    <link rel="stylesheet" href="./bootstrap.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+      <a class="navbar-brand" href="./index.html">
+        <img src="./images/gym_logo.png" class="rounded" width="30" height="30" alt="" /> Home
+      </a>
+      <div class="mr-auto">
+        <ul class="navbar-nav">
+          <li><a class="nav-link" href="./service.html">Services</a></li>
+          <li><a class="nav-link" href="./supplement.html">Supplements</a></li>
+          <li><a class="nav-link" href="./about.html">About Us</a></li>
+          <li><a class="nav-link" href="./contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Signup</li>
+      </ol>
+    </nav>
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <div class="card">
+                    <img src="./images/top.jpg" class="img-fluid img-thumbnail" />
+                    <div class="card-header bg-dark text-white text-center">
+                        <h3>Sign-up Form </h3>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label>Name [First name is your username] :</label>
+                                <div class="row">
+                                    <div class="col-6">
+                                            <input type="text" class="form-control" placeholder="First name">
+                                    </div>
+                                    <div class="col-6">
+                                            <input type="text" class="form-control" placeholder="Last name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Gender :</label>
+                                <div>
+                                    <input type="radio" name="gender"> Male
+                                </div>
+                                <div>
+                                    <input  type="radio" name="gender"> Female
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Weight [Kgs] :</label>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <input type="number" class="form-control" placeholder="Current weight">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="number" class="form-control" placeholder="Desired weight">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label>Height [Cms] :</label>
+                                        <div>
+                                            <input type="number" class="form-control" >
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label>BMI :</label>
+                                        <div>
+                                            <input type="number" class="form-control" >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Home Address :</label>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Street Address">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <input type="text" class="form-control" placeholder="City" >
+                                    </div>
+                                    <div class="col-6">
+                                        <select class="form-control">
+                                            <option>State</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <input type="text" class="form-control" placeholder="Postal / Zip Code">
+                                    </div>
+                                    <div class="col">
+                                        <select class="form-control">
+                                            <option>Country</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Email-Id :</label>
+                                <input type="email" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone :</label>
+                                <input type="number" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Do you require personal trainer ? :</label>
+                                <div>
+                                    <input type="radio" name="gender"> Yes
+                                </div>
+                                <div>
+                                    <input  type="radio" name="gender"> No
+                                </div>
+                            </div> <div class="form-group">
+                                <label>Have you been in a gym before ? :</label>
+                                <div>
+                                    <input type="radio" name="gender"> Yes
+                                </div>
+                                <div>
+                                    <input  type="radio" name="gender"> No
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Password :</label>
+                                <input type="password" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="button" value="I am ready to transform !"  class="form-control btn btn-success">
+                            </div>
+                        </form>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
