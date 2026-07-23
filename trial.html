@@ -1,67 +1,118 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <title>MUTANTS GYM</title>
-        <link rel="website icon" type="png" href="./images/gym_logo.png">
-        <link rel="stylesheet" href="./bootstrap.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Free Trial | Mutants Gym</title>
+        <link rel="icon" type="image/png" href="./images/gym_logo.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+        <link rel="stylesheet" href="./assets/site.css" />
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="./index.html"><img src="./images/gym_logo.png" width="30" height="30" alt="Mutants Gym" /> Mutants Gym</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="topNav">
+                    <ul class="navbar-nav mr-auto ml-lg-3">
+                        <li class="nav-item"><a class="nav-link" data-nav href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" data-nav href="service.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" data-nav href="supplement.html">Supplements</a></li>
+                        <li class="nav-item"><a class="nav-link" data-nav href="about.html">Franchise</a></li>
+                        <li class="nav-item"><a class="nav-link" data-nav href="contact.html">Contact</a></li>
+                    </ul>
+                    <a class="btn btn-sm btn-outline-light-soft mr-2" href="./trial.html">Free Trial</a>
+                    <a class="btn btn-sm btn-brand" href="./login.html">Login</a>
+                    <button id="themeToggle" class="btn btn-sm btn-outline-light-soft ml-2" type="button">Dark</button>
+                </div>
+            </div>
+        </nav>
+
+        <main class="page-shell">
+            <div class="container">
+                <section class="row">
+                    <div class="col-lg-5 mb-3 mb-lg-0">
+                        <div class="panel h-100">
+                            <span class="badge-soft">One Day Pass</span>
+                            <h1 class="section-title mb-2">Book Your Free Trial</h1>
+                            <p class="muted">Experience the floor, meet a coach, and complete a guided starter workout tailored to your level.</p>
+                            <ul class="list-tight muted">
+                                <li>Age 16+ with valid phone number</li>
+                                <li>Carry training shoes and a water bottle</li>
+                                <li>Slots available in morning and evening windows</li>
+                            </ul>
+                            <img src="./images/gym_logo.png" class="img-fluid mt-3" alt="Mutants Gym logo" style="max-width: 160px" />
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="form-wrap">
+                            <h2 class="h4 mb-3">Trial Registration Form</h2>
+                            <form id="trialForm" novalidate>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="trialName">Full Name</label>
+                                        <input id="trialName" name="name" type="text" class="form-control" required />
+                                        <div class="invalid-feedback">Name is required.</div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="trialPhone">Mobile Number</label>
+                                        <input id="trialPhone" name="phone" type="tel" class="form-control" pattern="[0-9]{10}" required />
+                                        <div class="invalid-feedback">Use a valid 10-digit number.</div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="trialEmail">Email</label>
+                                        <input id="trialEmail" name="email" type="email" class="form-control" required />
+                                        <div class="invalid-feedback">A valid email is required.</div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="trialDate">Preferred Date</label>
+                                        <input id="trialDate" name="date" type="date" class="form-control" required />
+                                        <div class="invalid-feedback">Please select a date.</div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="trialCity">City</label>
+                                        <input id="trialCity" name="city" type="text" class="form-control" required />
+                                        <div class="invalid-feedback">City is required.</div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="trialGoal">Primary Goal</label>
+                                        <select id="trialGoal" name="goal" class="custom-select" required>
+                                            <option value="">Choose your goal</option>
+                                            <option>Weight Loss</option>
+                                            <option>Muscle Gain</option>
+                                            <option>General Fitness</option>
+                                            <option>Endurance</option>
+                                        </select>
+                                        <div class="invalid-feedback">Please choose one goal.</div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-brand">Submit Trial Request</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container d-flex justify-content-between align-items-center flex-wrap">
+                <small>Free trial bookings are limited per day by slot capacity.</small>
+                <small>Copyright <span id="currentYear"></span></small>
+            </div>
+        </footer>
+
+        <div id="toast" class="toast-note" role="status" aria-live="polite"></div>
+
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    </head>
-    <body>
-       <nav class="navbar navbar-dark bg-dark navbar-expand">
-        <a class="navbar-brand" href="./index.html">
-            <img src="./images/gym_logo.png"  class="rounded" width="30" height="30" alt=""> Home
-          </a>
-        <div class="mr-auto">
-            <ul class="navbar-nav w-100">
-                <li><a class="nav-link" href="./service.html">Services</a></li>
-                <li><a class="nav-link" href="./supplement.html">Supplements</a></li>
-                <li><a class="nav-link" href="./about.html">Franchise</a></li>
-                <li><a class="nav-link" href="./contact.html">Contact</a></li>
-             </ul>
-        </div>
-        <div class="ml-auto">
-            <ul class="navbar-nav">
-                <li><a class="nav-link" href="./login.html"><button class="btn btn-primary">Login</button></a></li>
-            </ul>
-        </div>
-       </nav>
-       <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Free trial</li>
-        </ol>
-       </nav>
-       <div class="container">
-        <div class="row">
-            <div class="col-4"></div>
-            <div class="col-4">
-                <img  src="./images/gym_logo.png" alt="">
-            </div>
-        </div>
-        <div>
-            <h2 class="text-center">Free Trial Gym Request</h2>
-            <h3 class="text-center">Free Trial For Mutnat's Gym marahathalli ,Bengaluru,</h3>
-        </div>
-        <br>        
-        <div class="row">
-            <div class="col-4">
-                Mutant’s Gym offers you a one day free trail at the Mutant’s Gym club of your choice, so that you can experience state of the art facilities and amenities, advanced workout equipment and certified personal trainers. To avail the free trial the following rules must be followed.
-            </div>
-            <div class="col-4">
-                <input type="text" class="border border-secondary rounded" placeholder="Enter name "><br>
-                <input type="number" class="border border-secondary rounded" placeholder="Enter mobile number "><br>
-                <input type="text" class="border border-secondary rounded" placeholder="Enter state name "><br>
-                <br>
-            </div>
-            <div class="col-4">
-                <input type="email" placeholder="Enter email"><br>
-                <input type="text" placeholder="Enter city"><br>
-                <input type="date" class="border border-secondary rounded">
-            </div>
-
-        </div>
-       </body>
+        <script src="./assets/site.js"></script>
+    </body>
 </html>

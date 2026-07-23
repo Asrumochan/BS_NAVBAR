@@ -1,92 +1,99 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-            integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-            <title>MUTANTS GYM</title>
-            <link rel="website icon" type="png" href="./images/gym_logo.png">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Supplements | Mutants Gym</title>
+        <link rel="icon" type="image/png" href="./images/gym_logo.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+        <link rel="stylesheet" href="./assets/site.css" />
     </head>
     <body>
-       <nav class="navbar navbar-dark bg-dark navbar-expand">
-        <a class="navbar-brand" href="./index.html">
-            <img src="./images/gym_logo.png"  class="rounded" width="30" height="30" alt=""> Home
-          </a>
-        <div class="mr-auto">
-            <ul class="navbar-nav">
-                <li><a class="nav-link" href="./service.html">Services</a></li>
-                <li><a class="nav-link text-white" href="./supplement.html">Supplements</a></li>
-                <li><a class="nav-link" href="./about.html">Franchise</a></li>
-                <li><a class="nav-link" href="./contact.html">Contact</a></li>
-            </ul>
-        </div>
-       </nav>
-       <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Supplements</li>
-        </ol>
-       </nav>
-       <div class="container">
-        <div class="row">
-            <div class="col-8">
-                <h3 class="text-secondary">Creatine</h3>
-                <p>Creatine is a molecule that’s produced naturally in your body. It provides energy for your muscles and other tissues. However, taking it as a dietary supplement can increase muscle creatine content by up to 40%Trusted Source beyond its normal levels. This affects your muscle cells and exercise performance, promoting muscle gain. In fact, a large amount of researchTrusted Source shows creatine improves muscle strength.</p>
+        <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="./index.html"><img src="./images/gym_logo.png" width="30" height="30" alt="Mutants Gym" /> Mutants Gym</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="topNav">
+                    <ul class="navbar-nav mr-auto ml-lg-3">
+                        <li class="nav-item"><a class="nav-link" data-nav href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" data-nav href="service.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" data-nav href="supplement.html">Supplements</a></li>
+                        <li class="nav-item"><a class="nav-link" data-nav href="about.html">Franchise</a></li>
+                        <li class="nav-item"><a class="nav-link" data-nav href="contact.html">Contact</a></li>
+                    </ul>
+                    <a class="btn btn-sm btn-outline-light-soft mr-2" href="./trial.html">Free Trial</a>
+                    <a class="btn btn-sm btn-brand" href="./login.html">Login</a>
+                    <button id="themeToggle" class="btn btn-sm btn-outline-light-soft ml-2" type="button">Dark</button>
+                </div>
             </div>
-            <div class="col-4">
-                <img src="./images/sup-1.jpeg" class="img-fluid" style="height: 200px" >
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-8">
-                <h3>
-                    Protein supplements
-                </h3>
-                <p>Getting enough protein is critical for gaining muscle. Specifically, to gain muscle, you need to consume more protein than your body breaks down through natural processes. While it’s possible to get all the protein you need from protein-rich foods, some people may struggle to do so. If this sounds like you, you may want to consider taking a protein supplement. There are many different protein supplements available, but some of the most popular are whey, casein, and soy protein. Other supplements contain protein isolated from eggs, split peas, rice, and hemp seeds.</p>
-            </div>
-            <div class="col-3">
-                <img src="./images/sup-2.jpg" class="img-fluid" style="height: 200px">
-            </div>
+        </nav>
 
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-8">
-                <h3>Weight gainers</h3>
-                <p>Weight gainers are supplements designed to conveniently help you get more calories and protein. They’re typically used by individuals who struggle to gain muscle, even when consuming large amounts of calories and lifting weights. Although the calorie contents of weight gainer supplements vary, it’s not uncommon for some to contain over 1,000 calories per serving. Many people think these calories come from protein since it’s so important for muscle building. However, most of the calories actually come from carbs</p>
+        <main class="page-shell">
+            <div class="container">
+                <section class="panel mb-4">
+                    <span class="badge-soft">Fuel Strategy</span>
+                    <h1 class="section-title mb-2">Supplement Intelligence Desk</h1>
+                    <p class="muted mb-3">Find evidence-led options based on your training goal. This catalog helps members shortlist products before speaking with a coach.</p>
+                    <div class="row">
+                        <div class="col-md-8 mb-2 mb-md-0">
+                            <input id="supplementSearch" type="search" class="form-control" placeholder="Search by supplement or goal (example: recovery, protein, endurance)" />
+                        </div>
+                        <div class="col-md-4">
+                            <select id="supplementSort" class="custom-select">
+                                <option value="name">Sort by Name</option>
+                                <option value="price">Sort by Price</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="supplementCards" class="row">
+                    <div class="col-lg-4 mb-3" data-supplement data-name="creatine" data-tags="strength recovery power" data-price="1500">
+                        <div class="card-soft h-100"><img src="./images/sup-1.jpeg" alt="Creatine" /><div class="body"><h3 class="h5">Creatine Monohydrate</h3><p class="muted">Supports power output and strength progression in repeated lifting blocks.</p><p class="mb-0"><strong>Approx:</strong> INR 1,500</p></div></div>
+                    </div>
+                    <div class="col-lg-4 mb-3" data-supplement data-name="whey protein" data-tags="protein muscle gain" data-price="2400">
+                        <div class="card-soft h-100"><img src="./images/sup-2.jpg" alt="Protein" /><div class="body"><h3 class="h5">Whey Protein Blend</h3><p class="muted">Convenient daily protein support for muscle synthesis and recovery.</p><p class="mb-0"><strong>Approx:</strong> INR 2,400</p></div></div>
+                    </div>
+                    <div class="col-lg-4 mb-3" data-supplement data-name="mass gainer" data-tags="mass calories bulking" data-price="3200">
+                        <div class="card-soft h-100"><img src="./images/sup-3.jpeg" alt="Mass gainer" /><div class="body"><h3 class="h5">Mass Gainer</h3><p class="muted">High-calorie formula for hard gainers with elevated energy demands.</p><p class="mb-0"><strong>Approx:</strong> INR 3,200</p></div></div>
+                    </div>
+                    <div class="col-lg-4 mb-3" data-supplement data-name="beta alanine" data-tags="endurance fatigue" data-price="1800">
+                        <div class="card-soft h-100"><img src="./images/sup-4.jpeg" alt="Beta alanine" /><div class="body"><h3 class="h5">Beta Alanine</h3><p class="muted">Helps buffer fatigue in longer and high-intensity training sessions.</p><p class="mb-0"><strong>Approx:</strong> INR 1,800</p></div></div>
+                    </div>
+                    <div class="col-lg-4 mb-3" data-supplement data-name="bcaa" data-tags="recovery amino acids" data-price="1700">
+                        <div class="card-soft h-100"><img src="./images/sup-5.jpg" alt="BCAA" /><div class="body"><h3 class="h5">BCAA Matrix</h3><p class="muted">Amino acid support during deficit phases and long training blocks.</p><p class="mb-0"><strong>Approx:</strong> INR 1,700</p></div></div>
+                    </div>
+                    <div class="col-lg-4 mb-3" data-supplement data-name="hmb" data-tags="muscle preservation" data-price="2100">
+                        <div class="card-soft h-100"><img src="./images/sup-6.jpg" alt="HMB" /><div class="body"><h3 class="h5">HMB</h3><p class="muted">Useful during aggressive fat-loss phases to support lean muscle retention.</p><p class="mb-0"><strong>Approx:</strong> INR 2,100</p></div></div>
+                    </div>
+                </section>
+
+                <section class="panel mt-2">
+                    <h2 class="section-title mb-2">Safety Notes</h2>
+                    <ul class="list-tight muted">
+                        <li>Do not self-medicate. Always align supplements to your health profile.</li>
+                        <li>Hydration, sleep, and food quality remain higher priority than supplementation.</li>
+                        <li>Members with known conditions should consult a physician before use.</li>
+                    </ul>
+                </section>
             </div>
-            <div class="col-4">
-                <img src="./images/sup-3.jpeg" class="img-fluid" style="height: 200px">
+        </main>
+
+        <footer class="footer">
+            <div class="container d-flex justify-content-between align-items-center flex-wrap">
+                <small>Supplement guidance is educational, not medical advice.</small>
+                <small>Copyright <span id="currentYear"></span></small>
             </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-8">
-                <h3>Beta-alanine</h3>
-                <p>Beta-alanine is an amino acid that reduces fatigue and may improve exercise performanceTrusted Source. Additionally, beta-alanine may help increase muscle mass if you are following an exercise program. One 2011 studyTrusted Source showed that taking 4 g of beta-alanine per day for 8 weeks increased lean body mass more than a placebo in college wrestlers and football players.</p>
-            </div>
-            <div class="col-4">
-                <img src="./images/sup-4.jpeg" class="img-fluid" style="width:150px">
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-8">
-                <h3>Branched-chain amino acids</h3>
-                <p>Branched-chain amino acids (BCAAs) consist of three individual amino acids: leucine, isoleucine, and valine. They are found in most protein sources, particularly those of animal origin like meat, poultry, eggs, dairy, and fish. BCAAs are critically important for muscle growth and make up around 35%Trusted Source of the amino acids in your muscles. Just about everyone consumes BCAAs from food every day, but it’s also very popular to take BCAAs as a supplement.</p>
-            </div>
-            <div class="col-4">
-                <img src="./images/sup-5.jpg" class="img-fluid" style="height: 200px">
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-8">
-                <h3> Beta-hydroxy beta-methylbutyrate</h3>
-                <p>Beta-hydroxy beta-methylbutyrate (HMB) is a molecule that’s produced when your body processes the amino acid leucine. HMB is responsible for some of the beneficial effects of protein and leucine in the diet. It may be especially important for reducing the breakdown of muscle proteins.</p>
-            </div>
-            <div class="col-4">
-                <img src="./images/sup-6.jpg" class="img-fluid" style="height: 200px">
-            </div>
-        </div>
-       </div>
+        </footer>
+
+        <div id="toast" class="toast-note" role="status" aria-live="polite"></div>
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="./assets/site.js"></script>
     </body>
 </html>
