@@ -26,6 +26,10 @@
                     </ul>
                     <a class="btn btn-sm btn-outline-light-soft mr-2" href="./trial.html">Free Trial</a>
                     <a class="btn btn-sm btn-brand" href="./login.html">Login</a>
+                    <a class="btn btn-sm btn-outline-light-soft ml-2 cart-link" href="./cart.html" aria-label="Open cart">
+                        <svg class="cart-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h-2l-1 2v2h2l2.6 7.6c.3.9 1.1 1.4 2 1.4h7.8v-2h-7.8l-.6-2h8.7c.9 0 1.7-.5 2-1.4l1.7-4.8v-1.8h-15.4l-.5-1.5zm4 15c-1.1 0-2 .9-2 2h2 0c1.1 0 2-.9 2-2h-2zm7 0c-1.1 0-2 .9-2 2h2 0c1.1 0 2-.9 2-2h-2z"/></svg>
+                        <span class="cart-count" data-cart-count>0</span>
+                    </a>
                     <button id="themeToggle" class="btn btn-sm btn-outline-light-soft ml-2" type="button">Dark</button>
                 </div>
             </div>
@@ -57,24 +61,28 @@
                     </div>
                 </section>
 
-                <section id="supplementCards" class="row">
-                    <div class="col-lg-4 mb-3" data-supplement data-name="creatine" data-tags="strength recovery power" data-price="1500">
-                        <div class="card-soft h-100"><img src="./images/sup-1.jpeg" alt="Creatine" /><div class="body"><h3 class="h5">Creatine Monohydrate</h3><p class="muted">Supports power output and strength progression in repeated lifting blocks.</p><p class="mb-0"><strong>Approx:</strong> INR 1,500</p></div></div>
-                    </div>
-                    <div class="col-lg-4 mb-3" data-supplement data-name="whey protein" data-tags="protein muscle gain" data-price="2400">
-                        <div class="card-soft h-100"><img src="./images/sup-2.jpg" alt="Protein" /><div class="body"><h3 class="h5">Whey Protein Blend</h3><p class="muted">Convenient daily protein support for muscle synthesis and recovery.</p><p class="mb-0"><strong>Approx:</strong> INR 2,400</p></div></div>
-                    </div>
-                    <div class="col-lg-4 mb-3" data-supplement data-name="mass gainer" data-tags="mass calories bulking" data-price="3200">
-                        <div class="card-soft h-100"><img src="./images/sup-3.jpeg" alt="Mass gainer" /><div class="body"><h3 class="h5">Mass Gainer</h3><p class="muted">High-calorie formula for hard gainers with elevated energy demands.</p><p class="mb-0"><strong>Approx:</strong> INR 3,200</p></div></div>
-                    </div>
-                    <div class="col-lg-4 mb-3" data-supplement data-name="beta alanine" data-tags="endurance fatigue" data-price="1800">
-                        <div class="card-soft h-100"><img src="./images/sup-4.jpeg" alt="Beta alanine" /><div class="body"><h3 class="h5">Beta Alanine</h3><p class="muted">Helps buffer fatigue in longer and high-intensity training sessions.</p><p class="mb-0"><strong>Approx:</strong> INR 1,800</p></div></div>
-                    </div>
-                    <div class="col-lg-4 mb-3" data-supplement data-name="bcaa" data-tags="recovery amino acids" data-price="1700">
-                        <div class="card-soft h-100"><img src="./images/sup-5.jpg" alt="BCAA" /><div class="body"><h3 class="h5">BCAA Matrix</h3><p class="muted">Amino acid support during deficit phases and long training blocks.</p><p class="mb-0"><strong>Approx:</strong> INR 1,700</p></div></div>
-                    </div>
-                    <div class="col-lg-4 mb-3" data-supplement data-name="hmb" data-tags="muscle preservation" data-price="2100">
-                        <div class="card-soft h-100"><img src="./images/sup-6.jpg" alt="HMB" /><div class="body"><h3 class="h5">HMB</h3><p class="muted">Useful during aggressive fat-loss phases to support lean muscle retention.</p><p class="mb-0"><strong>Approx:</strong> INR 2,100</p></div></div>
+                <section class="row">
+                    <div class="col-lg-12">
+                        <div id="supplementCards" class="row">
+                            <div class="col-md-6 mb-3" data-supplement data-name="creatine" data-title="Creatine Monohydrate" data-tags="strength recovery power" data-price="1500">
+                                <div class="card-soft h-100"><img src="./images/sup-1.jpeg" alt="Creatine" /><div class="body"><h3 class="h5">Creatine Monohydrate</h3><p class="muted">Supports power output and strength progression in repeated lifting blocks.</p><p class="mb-3"><strong>Approx:</strong> INR 1,500</p><div class="d-flex align-items-center"><button type="button" class="btn btn-outline-secondary btn-sm" data-dec-cart data-cart-name="Creatine Monohydrate" data-cart-price="1500" aria-label="Decrease Creatine Monohydrate">-</button><span class="badge badge-light mx-2" data-item-qty data-cart-name="Creatine Monohydrate">0</span><button type="button" class="btn btn-brand btn-sm" data-add-cart data-cart-name="Creatine Monohydrate" data-cart-price="1500" aria-label="Increase Creatine Monohydrate">+</button></div></div></div>
+                            </div>
+                            <div class="col-md-6 mb-3" data-supplement data-name="whey protein" data-title="Whey Protein Blend" data-tags="protein muscle gain" data-price="2400">
+                                <div class="card-soft h-100"><img src="./images/sup-2.jpg" alt="Protein" /><div class="body"><h3 class="h5">Whey Protein Blend</h3><p class="muted">Convenient daily protein support for muscle synthesis and recovery.</p><p class="mb-3"><strong>Approx:</strong> INR 2,400</p><div class="d-flex align-items-center"><button type="button" class="btn btn-outline-secondary btn-sm" data-dec-cart data-cart-name="Whey Protein Blend" data-cart-price="2400" aria-label="Decrease Whey Protein Blend">-</button><span class="badge badge-light mx-2" data-item-qty data-cart-name="Whey Protein Blend">0</span><button type="button" class="btn btn-brand btn-sm" data-add-cart data-cart-name="Whey Protein Blend" data-cart-price="2400" aria-label="Increase Whey Protein Blend">+</button></div></div></div>
+                            </div>
+                            <div class="col-md-6 mb-3" data-supplement data-name="mass gainer" data-title="Mass Gainer" data-tags="mass calories bulking" data-price="3200">
+                                <div class="card-soft h-100"><img src="./images/sup-3.jpeg" alt="Mass gainer" /><div class="body"><h3 class="h5">Mass Gainer</h3><p class="muted">High-calorie formula for hard gainers with elevated energy demands.</p><p class="mb-3"><strong>Approx:</strong> INR 3,200</p><div class="d-flex align-items-center"><button type="button" class="btn btn-outline-secondary btn-sm" data-dec-cart data-cart-name="Mass Gainer" data-cart-price="3200" aria-label="Decrease Mass Gainer">-</button><span class="badge badge-light mx-2" data-item-qty data-cart-name="Mass Gainer">0</span><button type="button" class="btn btn-brand btn-sm" data-add-cart data-cart-name="Mass Gainer" data-cart-price="3200" aria-label="Increase Mass Gainer">+</button></div></div></div>
+                            </div>
+                            <div class="col-md-6 mb-3" data-supplement data-name="beta alanine" data-title="Beta Alanine" data-tags="endurance fatigue" data-price="1800">
+                                <div class="card-soft h-100"><img src="./images/sup-4.jpeg" alt="Beta alanine" /><div class="body"><h3 class="h5">Beta Alanine</h3><p class="muted">Helps buffer fatigue in longer and high-intensity training sessions.</p><p class="mb-3"><strong>Approx:</strong> INR 1,800</p><div class="d-flex align-items-center"><button type="button" class="btn btn-outline-secondary btn-sm" data-dec-cart data-cart-name="Beta Alanine" data-cart-price="1800" aria-label="Decrease Beta Alanine">-</button><span class="badge badge-light mx-2" data-item-qty data-cart-name="Beta Alanine">0</span><button type="button" class="btn btn-brand btn-sm" data-add-cart data-cart-name="Beta Alanine" data-cart-price="1800" aria-label="Increase Beta Alanine">+</button></div></div></div>
+                            </div>
+                            <div class="col-md-6 mb-3" data-supplement data-name="bcaa" data-title="BCAA Matrix" data-tags="recovery amino acids" data-price="1700">
+                                <div class="card-soft h-100"><img src="./images/sup-5.jpg" alt="BCAA" /><div class="body"><h3 class="h5">BCAA Matrix</h3><p class="muted">Amino acid support during deficit phases and long training blocks.</p><p class="mb-3"><strong>Approx:</strong> INR 1,700</p><div class="d-flex align-items-center"><button type="button" class="btn btn-outline-secondary btn-sm" data-dec-cart data-cart-name="BCAA Matrix" data-cart-price="1700" aria-label="Decrease BCAA Matrix">-</button><span class="badge badge-light mx-2" data-item-qty data-cart-name="BCAA Matrix">0</span><button type="button" class="btn btn-brand btn-sm" data-add-cart data-cart-name="BCAA Matrix" data-cart-price="1700" aria-label="Increase BCAA Matrix">+</button></div></div></div>
+                            </div>
+                            <div class="col-md-6 mb-3" data-supplement data-name="hmb" data-title="HMB" data-tags="muscle preservation" data-price="2100">
+                                <div class="card-soft h-100"><img src="./images/sup-6.jpg" alt="HMB" /><div class="body"><h3 class="h5">HMB</h3><p class="muted">Useful during aggressive fat-loss phases to support lean muscle retention.</p><p class="mb-3"><strong>Approx:</strong> INR 2,100</p><div class="d-flex align-items-center"><button type="button" class="btn btn-outline-secondary btn-sm" data-dec-cart data-cart-name="HMB" data-cart-price="2100" aria-label="Decrease HMB">-</button><span class="badge badge-light mx-2" data-item-qty data-cart-name="HMB">0</span><button type="button" class="btn btn-brand btn-sm" data-add-cart data-cart-name="HMB" data-cart-price="2100" aria-label="Increase HMB">+</button></div></div></div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 

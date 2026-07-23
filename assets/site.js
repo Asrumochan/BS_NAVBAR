@@ -1,4 +1,7 @@
 (function () {
+  var CART_KEY = "mutants_cart";
+  var LEGACY_CART_KEY = "supplement_cart";
+
   function setYear() {
     var yearEl = document.getElementById("currentYear");
     if (yearEl) {
@@ -19,6 +22,148 @@
     window.setTimeout(function () {
       toast.classList.remove("show");
     }, 2600);
+  }
+
+  function readSharedCart() {
+    var raw = localStorage.getItem(CART_KEY);
+    if (!raw) {
+      var legacy = localStorage.getItem(LEGACY_CART_KEY);
+      if (legacy) {
+        localStorage.setItem(CART_KEY, legacy);
+        localStorage.removeItem(LEGACY_CART_KEY);
+        raw = legacy;
+      }
+    }
+
+    if (!raw) {
+      return [];
+    }
+
+    try {
+      var parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (error) {
+      localStorage.removeItem(CART_KEY);
+      return [];
+    }
+  }
+
+  function writeSharedCart(items) {
+    localStorage.setItem(CART_KEY, JSON.stringify(items));
+    syncCartCountBadges();
+    syncCardItemQty();
+  }
+
+  function syncCartCountBadges() {
+    var items = readSharedCart();
+    var count = items.reduce(function (sum, item) {
+      return sum + Number(item.qty || 1);
+    }, 0);
+    var badges = document.querySelectorAll("[data-cart-count]");
+    badges.forEach(function (badge) {
+      badge.textContent = String(count);
+    });
+  }
+
+  function getCartItemNameFromTrigger(button) {
+    if (!button) {
+      return "";
+    }
+
+    var card = button.closest("[data-supplement], [data-membership]");
+    return (
+      button.getAttribute("data-cart-name") ||
+      (card && (card.getAttribute("data-title") || card.getAttribute("data-name"))) ||
+      ""
+    );
+  }
+
+  function syncCardItemQty() {
+    var items = readSharedCart();
+    var qtyMap = {};
+    items.forEach(function (item) {
+      if (!item || !item.name) {
+        return;
+      }
+      qtyMap[item.name] = Number(item.qty || 1);
+    });
+
+    var qtyEls = document.querySelectorAll("[data-item-qty]");
+    qtyEls.forEach(function (el) {
+      var name = el.getAttribute("data-cart-name") || "";
+      var qty = name ? Number(qtyMap[name] || 0) : 0;
+      el.textContent = String(qty);
+    });
+  }
+
+  function addItemToCart(name, price) {
+    var items = readSharedCart();
+    var existing = items.find(function (item) {
+      return item.name === name;
+    });
+
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      items.push({ name: name, price: price, qty: 1 });
+    }
+
+    writeSharedCart(items);
+  }
+
+  function decreaseItemInCart(name) {
+    var items = readSharedCart();
+    var index = items.findIndex(function (item) {
+      return item.name === name;
+    });
+
+    if (index === -1) {
+      return false;
+    }
+
+    var qty = Number(items[index].qty || 1);
+    if (qty > 1) {
+      items[index].qty = qty - 1;
+    } else {
+      items.splice(index, 1);
+    }
+
+    writeSharedCart(items);
+    return true;
+  }
+
+  function bindGlobalAddToCart() {
+    document.addEventListener("click", function (event) {
+      var button = event.target.closest("[data-add-cart]");
+      if (button) {
+        var card = button.closest("[data-supplement], [data-membership]");
+        var name = getCartItemNameFromTrigger(button) || "Item";
+        var price = Number(button.getAttribute("data-cart-price") || (card && card.getAttribute("data-price")) || 0);
+
+        if (!price) {
+          showToast("Unable to add item. Missing price.", "error");
+          return;
+        }
+
+        addItemToCart(name, price);
+        showToast(name + " added to cart.");
+        return;
+      }
+
+      var decButton = event.target.closest("[data-dec-cart]");
+      if (!decButton) {
+        return;
+      }
+
+      var decName = getCartItemNameFromTrigger(decButton);
+      if (!decName) {
+        return;
+      }
+
+      if (decreaseItemInCart(decName)) {
+        showToast(decName + " quantity updated.");
+      }
+    });
   }
 
   function applyTheme(theme) {
@@ -224,6 +369,136 @@
     refresh();
   }
 
+  function bindCartPage() {
+    var cartItems = document.getElementById("cartItems");
+    var cartTotal = document.getElementById("cartTotal");
+    var clearCartBtn = document.getElementById("clearCart");
+    var checkoutBtn = document.getElementById("checkoutCart");
+
+    if (!cartItems || !cartTotal) {
+      return;
+    }
+
+    function readCart() {
+      return readSharedCart();
+    }
+
+    function writeCart(items) {
+      writeSharedCart(items);
+    }
+
+    function render(items) {
+      cartItems.innerHTML = "";
+      if (!items.length) {
+        cartItems.innerHTML = '<li class="muted">Your cart is empty.</li>';
+        cartTotal.textContent = "INR 0";
+        return;
+      }
+
+      var total = 0;
+      items.forEach(function (item, index) {
+        total += Number(item.price || 0) * Number(item.qty || 1);
+
+        var line = document.createElement("li");
+        line.className = "d-flex justify-content-between align-items-center mb-2";
+        line.innerHTML =
+          '<span>' +
+          item.name +
+          "</span>" +
+          '<div class="d-flex align-items-center">' +
+          '<button type="button" class="btn btn-link btn-sm p-0 mr-2" aria-label="Decrease quantity" data-cart-dec="' +
+          index +
+          '">-</button>' +
+          '<span class="mr-2" aria-live="polite">' +
+          item.qty +
+          "</span>" +
+          '<button type="button" class="btn btn-link btn-sm p-0 mr-3" aria-label="Increase quantity" data-cart-inc="' +
+          index +
+          '">+</button>' +
+          '<span class="mr-2">INR ' +
+          (Number(item.price || 0) * Number(item.qty || 1)).toLocaleString("en-IN") +
+          '</span><button type="button" class="btn btn-link btn-sm p-0" data-cart-remove="' +
+          index +
+          '">Remove</button></div>';
+        cartItems.appendChild(line);
+      });
+
+      cartTotal.textContent = "INR " + total.toLocaleString("en-IN");
+    }
+
+    cartItems.addEventListener("click", function (event) {
+      var incButton = event.target.closest("[data-cart-inc]");
+      if (incButton) {
+        var incIndex = Number(incButton.getAttribute("data-cart-inc"));
+        var incItems = readCart();
+        if (incIndex >= 0 && incIndex < incItems.length) {
+          incItems[incIndex].qty = Number(incItems[incIndex].qty || 1) + 1;
+          writeCart(incItems);
+          render(incItems);
+        }
+        return;
+      }
+
+      var decButton = event.target.closest("[data-cart-dec]");
+      if (decButton) {
+        var decIndex = Number(decButton.getAttribute("data-cart-dec"));
+        var decItems = readCart();
+        if (decIndex >= 0 && decIndex < decItems.length) {
+          var currentQty = Number(decItems[decIndex].qty || 1);
+          if (currentQty > 1) {
+            decItems[decIndex].qty = currentQty - 1;
+          } else {
+            decItems.splice(decIndex, 1);
+          }
+          writeCart(decItems);
+          render(decItems);
+        }
+        return;
+      }
+
+      var button = event.target.closest("[data-cart-remove]");
+      if (!button) {
+        return;
+      }
+
+      var index = Number(button.getAttribute("data-cart-remove"));
+      var items = readCart();
+      if (index < 0 || index >= items.length) {
+        return;
+      }
+
+      var removedName = items[index].name;
+      items.splice(index, 1);
+      writeCart(items);
+      render(items);
+      showToast(removedName + " removed from cart.");
+    });
+
+    if (clearCartBtn) {
+      clearCartBtn.addEventListener("click", function () {
+        writeCart([]);
+        render([]);
+        showToast("Cart cleared.");
+      });
+    }
+
+    if (checkoutBtn) {
+      checkoutBtn.addEventListener("click", function () {
+        var items = readCart();
+        if (!items.length) {
+          showToast("Your cart is empty.", "error");
+          return;
+        }
+
+        writeCart([]);
+        render([]);
+        showToast("Cart request submitted. Team will contact you.");
+      });
+    }
+
+    render(readCart());
+  }
+
   function bindFaqToggle() {
     var triggers = document.querySelectorAll("[data-faq-target]");
     triggers.forEach(function (btn) {
@@ -239,12 +514,16 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    syncCartCountBadges();
+    syncCardItemQty();
     setYear();
     bindThemeToggle();
     highlightActiveMenu();
     bindPricingEstimator();
     bindBmiCalculator();
     bindSupplementFilter();
+    bindGlobalAddToCart();
+    bindCartPage();
     bindFaqToggle();
 
     bindStorageForm("trialForm", "trial_request", "Trial request submitted. Our team will call you within 2 hours.");
