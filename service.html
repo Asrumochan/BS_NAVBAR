@@ -34,6 +34,10 @@
           </ul>
           <a class="btn btn-sm btn-outline-light-soft mr-2" href="./trial.html">Free Trial</a>
           <a class="btn btn-sm btn-brand" href="./login.html">Login</a>
+          <a class="btn btn-sm btn-outline-light-soft ml-2 cart-link" href="./cart.html" aria-label="Open cart">
+            <svg class="cart-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h-2l-1 2v2h2l2.6 7.6c.3.9 1.1 1.4 2 1.4h7.8v-2h-7.8l-.6-2h8.7c.9 0 1.7-.5 2-1.4l1.7-4.8v-1.8h-15.4l-.5-1.5zm4 15c-1.1 0-2 .9-2 2h2 0c1.1 0 2-.9 2-2h-2zm7 0c-1.1 0-2 .9-2 2h2 0c1.1 0 2-.9 2-2h-2z"/></svg>
+            <span class="cart-count" data-cart-count>0</span>
+          </a>
           <button id="themeToggle" class="btn btn-sm btn-outline-light-soft ml-2" type="button">Dark</button>
         </div>
       </div>
@@ -89,6 +93,77 @@
               <p class="muted mb-0">Members receive a monthly progression report with attendance quality score, strength baselines, and cardio thresholds.</p>
             </div>
           </div>
+        </section>
+
+        <section class="panel mb-4">
+          <span class="badge-soft">Per Subscription</span>
+          <h2 class="section-title mb-2">Membership Plans</h2>
+          <p class="muted mb-3">Choose a plan based on your training consistency and support level. All subscriptions include floor access and coach check-ins.</p>
+          <table class="table-modern mb-0">
+            <thead>
+              <tr>
+                <th>Plan</th>
+                <th>Duration</th>
+                <th>Price</th>
+                <th>Includes</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Starter</td>
+                <td>1 Month</td>
+                <td>INR 1,500</td>
+                <td>Gym access + onboarding assessment</td>
+                    <td>
+                      <div class="d-inline-flex align-items-center">
+                        <button type="button" class="btn btn-outline-secondary btn-sm" data-dec-cart data-cart-name="Starter Membership" data-cart-price="1500" aria-label="Decrease Starter Membership">-</button>
+                        <span class="badge badge-light mx-2" data-item-qty data-cart-name="Starter Membership">0</span>
+                        <button type="button" class="btn btn-brand btn-sm" data-add-cart data-cart-name="Starter Membership" data-cart-price="1500" aria-label="Increase Starter Membership">+</button>
+                      </div>
+                    </td>
+              </tr>
+              <tr>
+                <td>Momentum</td>
+                <td>3 Months</td>
+                <td>INR 4,200</td>
+                <td>All Starter benefits + monthly progress review</td>
+                    <td>
+                      <div class="d-inline-flex align-items-center">
+                        <button type="button" class="btn btn-outline-secondary btn-sm" data-dec-cart data-cart-name="Momentum Membership" data-cart-price="4200" aria-label="Decrease Momentum Membership">-</button>
+                        <span class="badge badge-light mx-2" data-item-qty data-cart-name="Momentum Membership">0</span>
+                        <button type="button" class="btn btn-brand btn-sm" data-add-cart data-cart-name="Momentum Membership" data-cart-price="4200" aria-label="Increase Momentum Membership">+</button>
+                      </div>
+                    </td>
+              </tr>
+              <tr>
+                <td>Performance</td>
+                <td>6 Months</td>
+                <td>INR 8,500</td>
+                <td>All Momentum benefits + nutrition consult</td>
+                    <td>
+                      <div class="d-inline-flex align-items-center">
+                        <button type="button" class="btn btn-outline-secondary btn-sm" data-dec-cart data-cart-name="Performance Membership" data-cart-price="8500" aria-label="Decrease Performance Membership">-</button>
+                        <span class="badge badge-light mx-2" data-item-qty data-cart-name="Performance Membership">0</span>
+                        <button type="button" class="btn btn-brand btn-sm" data-add-cart data-cart-name="Performance Membership" data-cart-price="8500" aria-label="Increase Performance Membership">+</button>
+                      </div>
+                    </td>
+              </tr>
+              <tr>
+                <td>Transformation</td>
+                <td>12 Months</td>
+                <td>INR 15,000</td>
+                <td>All Performance benefits + 2 bonus months</td>
+                    <td>
+                      <div class="d-inline-flex align-items-center">
+                        <button type="button" class="btn btn-outline-secondary btn-sm" data-dec-cart data-cart-name="Transformation Membership" data-cart-price="15000" aria-label="Decrease Transformation Membership">-</button>
+                        <span class="badge badge-light mx-2" data-item-qty data-cart-name="Transformation Membership">0</span>
+                        <button type="button" class="btn btn-brand btn-sm" data-add-cart data-cart-name="Transformation Membership" data-cart-price="15000" aria-label="Increase Transformation Membership">+</button>
+                      </div>
+                    </td>
+              </tr>
+            </tbody>
+          </table>
         </section>
 
         <section class="panel">

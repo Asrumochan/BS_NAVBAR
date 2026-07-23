@@ -1,80 +1,154 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>MUTANTS GYM</title>
-    <link rel="website icon" type="png" href="./images/gym_logo.png" />
-    <link rel="stylesheet" href="./bootstrap.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mutants Gym | Login</title>
+    <link rel="icon" type="image/png" href="./images/gym_logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./assets/site.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./images/gym_logo.png" width="30" height="30" alt="Mutants Gym" />
+          Mutants Gym
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#topNav"
+          aria-controls="topNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav mr-auto ml-lg-3">
+            <li class="nav-item"><a class="nav-link" data-nav href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav href="service.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav href="supplement.html">Supplements</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav href="about.html">Franchise</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav href="contact.html">Contact</a></li>
+          </ul>
+          <a class="btn btn-sm btn-outline-light-soft mr-2" href="./trial.html">Free Trial</a>
+          <a class="btn btn-sm btn-brand" href="./signup.html">Join Now</a>
+          <a class="btn btn-sm btn-outline-light-soft ml-2 cart-link" href="./cart.html" aria-label="Open cart">
+            <svg class="cart-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h-2l-1 2v2h2l2.6 7.6c.3.9 1.1 1.4 2 1.4h7.8v-2h-7.8l-.6-2h8.7c.9 0 1.7-.5 2-1.4l1.7-4.8v-1.8h-15.4l-.5-1.5zm4 15c-1.1 0-2 .9-2 2h2 0c1.1 0 2-.9 2-2h-2zm7 0c-1.1 0-2 .9-2 2h2 0c1.1 0 2-.9 2-2h-2z"/></svg>
+            <span class="cart-count" data-cart-count>0</span>
+          </a>
+          <button id="themeToggle" class="btn btn-sm btn-outline-light-soft ml-2" type="button">Dark</button>
+        </div>
+      </div>
+    </nav>
+
+    <section class="promo-strip" aria-label="Member login hint">
+      <div class="container d-flex flex-wrap align-items-center justify-content-between">
+        <p class="mb-2 mb-md-0">
+          <strong>Member Access:</strong> Log in to manage your profile, check plan details, and continue your fitness journey.
+        </p>
+        <a class="btn btn-sm btn-brand" href="./forgot.html">Forgot Password</a>
+      </div>
+    </section>
+
+    <main class="page-shell">
+      <div class="container">
+        <section class="row align-items-stretch">
+          <div class="col-lg-6 mb-3 mb-lg-0">
+            <div class="hero-panel h-100">
+              <span class="badge-soft">Member Portal</span>
+              <h1 class="hero-title">Welcome Back, Athlete</h1>
+              <p class="mb-2">
+                Re-enter your dashboard to track progress, revisit workouts, and stay accountable to your transformation goals.
+              </p>
+              <div class="hero-kpis">
+                <div class="kpi"><strong>24/7</strong> Dashboard Access</div>
+                <div class="kpi"><strong>Weekly</strong> Progress Logs</div>
+                <div class="kpi"><strong>Coach</strong> Feedback Loop</div>
+                <div class="kpi"><strong>Secure</strong> Member Data</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="form-wrap h-100">
+              <h2 class="section-title mb-2">Login</h2>
+              <p class="muted mb-4">Use your registered username and password to continue.</p>
+
+              <form id="loginForm" novalidate>
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input
+                    id="username"
+                    name="username"
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter your username"
+                    autocomplete="username"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    class="form-control"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required
+                  />
+                </div>
+
+                <div class="form-group d-flex justify-content-between align-items-center flex-wrap">
+                  <div class="custom-control custom-checkbox mr-3 mb-2 mb-sm-0">
+                    <input id="rememberMe" name="rememberMe" type="checkbox" class="custom-control-input" />
+                    <label class="custom-control-label" for="rememberMe">Stay signed in</label>
+                  </div>
+                  <a href="./forgot.html">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-brand btn-block">Log In</button>
+
+                <p class="text-center mt-3 mb-0">
+                  New to Mutants Gym?
+                  <a href="./signup.html">Create an account</a>
+                </p>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container d-flex justify-content-between align-items-center flex-wrap">
+        <small>Mutants Gym Performance Club. All rights reserved.</small>
+        <small>Copyright <span id="currentYear"></span></small>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast-note" role="status" aria-live="polite"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-  </head>
-  <body>
-    <nav class="navbar navbar-dark bg-dark navbar-expand">
-      <a class="navbar-brand" href="./index.html">
-        <img src="./images/gym_logo.png"  class="rounded" width="30" height="30" alt="" /> Home
-      </a>
-      <div class="mr-auto">
-        <ul class="navbar-nav">
-          <li><a class="nav-link" href="./service.html">Services</a></li>
-          <li><a class="nav-link" href="./supplement.html">Supplements</a></li>
-          <li><a class="nav-link" href="./about.html">Franchise</a></li>
-          <li><a class="nav-link" href="./contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Login</li>
-      </ol>
-    </nav>
-    <div>
-        <div class="conatiner">
-            <div class="row">
-                <div class="col-lg-2 col-xs-1"></div>
-                <div class="col-lg-8 col-xs-10">
-                    <div class="card">
-                        <img src="./images/top.jpg" class="img-fluid img-thumbnail bg-dark" alt="">
-                        <div class="card-header bg-dark text-white">
-                            <h3 class="text-center">Log In</h3>
-                        </div>
-                        <div class="card-body">
-                            <form>
-                                <div class="form-group">
-                                    <input type="text" class="form-control text-center" placeholder="Enter your username">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control text-center" placeholder="Enter your password">
-                                </div>
-                                
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <input type="checkbox" id="grp">
-                                            <label for="grp">Stay sign-in</label> 
-                                        </div>
-                                        <div class="col-6 text-right">
-                                            <a href="./forgot.html">forgot password?</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <a href="./index.html"><input type="button"class="form-control text-center btn btn-success" value=" Log-in"></a>
-                                </div>
-                                <div  class="text-center">
-                                    New customer ? <a href="./signup.html">Sign-up</a>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-xs-1"></div>
-                </div>
-            </div>
-    </div>
-    <br>
+    <script src="./assets/site.js"></script>
   </body>
 </html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart | Mutants Gym</title>
+    <link rel="icon" type="image/png" href="./images/gym_logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/site.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"><img src="./images/gym_logo.png" width="30" height="30" alt="Mutants Gym" /> Mutants Gym</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav mr-auto ml-lg-3">
+            <li class="nav-item"><a class="nav-link" data-nav href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav href="service.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav href="supplement.html">Supplements</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav href="about.html">Franchise</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav href="contact.html">Contact</a></li>
+          </ul>
+          <a class="btn btn-sm btn-outline-light-soft mr-2" href="./trial.html">Free Trial</a>
+          <a class="btn btn-sm btn-brand" href="./login.html">Login</a>
+          <a class="btn btn-sm btn-outline-light-soft ml-2 cart-link" href="./cart.html" aria-label="Open cart">
+            <svg class="cart-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h-2l-1 2v2h2l2.6 7.6c.3.9 1.1 1.4 2 1.4h7.8v-2h-7.8l-.6-2h8.7c.9 0 1.7-.5 2-1.4l1.7-4.8v-1.8h-15.4l-.5-1.5zm4 15c-1.1 0-2 .9-2 2h2 0c1.1 0 2-.9 2-2h-2zm7 0c-1.1 0-2 .9-2 2h2 0c1.1 0 2-.9 2-2h-2z"/></svg>
+            <span class="cart-count" data-cart-count>0</span>
+          </a>
+          <button id="themeToggle" class="btn btn-sm btn-outline-light-soft ml-2" type="button">Dark</button>
+        </div>
+      </div>
+    </nav>
+
+    <section class="promo-strip" aria-label="Cart checkout hint">
+      <div class="container d-flex flex-wrap align-items-center justify-content-between">
+        <p class="mb-2 mb-md-0"><strong>Review Cart:</strong> Confirm membership plans and supplements before checkout.</p>
+        <a class="btn btn-sm btn-brand" href="./supplement.html">Add More Products</a>
+      </div>
+    </section>
+
+    <main class="page-shell">
+      <div class="container">
+        <section class="row">
+          <div class="col-lg-8 mb-3 mb-lg-0">
+            <div class="panel h-100">
+              <span class="badge-soft">Cart Details</span>
+              <h1 class="section-title mb-2">Your Items</h1>
+              <p class="muted mb-3">You can remove unwanted items or clear everything before checkout.</p>
+              <ul id="cartItems" class="list-unstyled mb-0"></ul>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="panel h-100">
+              <span class="badge-soft">Summary</span>
+              <h2 class="h4 mt-2">Order Summary</h2>
+              <p class="mb-3"><strong>Total:</strong> <span id="cartTotal">INR 0</span></p>
+              <button id="checkoutCart" type="button" class="btn btn-brand btn-sm btn-block mb-2">Checkout</button>
+              <button id="clearCart" type="button" class="btn btn-outline-secondary btn-sm btn-block">Clear Cart</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container d-flex justify-content-between align-items-center flex-wrap">
+        <small>Checkout is simulated for demo purposes.</small>
+        <small>Copyright <span id="currentYear"></span></small>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast-note" role="status" aria-live="polite"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/site.js"></script>
+  </body>
+</html>

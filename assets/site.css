@@ -252,6 +252,36 @@ body.theme-dark .site-nav {
   background: rgba(255, 255, 255, 0.16);
 }
 
+.cart-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+}
+
+.cart-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  padding: 0 4px;
+  background: var(--accent);
+  color: #1f1300;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+}
+
 .table-modern {
   width: 100%;
   border-collapse: separate;
@@ -341,6 +371,20 @@ body.theme-dark .site-nav {
   color: var(--muted);
 }
 
+.signup-page .hero-title,
+.signup-page .section-title,
+.signup-page p,
+.signup-page label,
+.signup-page .badge-soft {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.signup-page .form-wrap,
+.signup-page .hero-panel {
+  overflow: hidden;
+}
+
 @media (max-width: 991px) {
   .hero-panel {
     padding: 1.4rem;
@@ -348,5 +392,16 @@ body.theme-dark .site-nav {
 
   .navbar .btn {
     margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .signup-page .hero-panel,
+  .signup-page .form-wrap {
+    padding: 1rem;
+  }
+
+  .signup-page .hero-kpis {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 }
